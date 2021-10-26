@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs")  %>
+
+    <body>
+        <%- include("./partials/nav.ejs")  %>
+            <main>
+                <div class="notice" id="showNotice">
+                    <p id="notice"></p>   <p class="noticeClose" id="noticeClose">X</p> 
+                   </div>
+                <div class="loading" id="showLoading">
+                    <i class="fas fa-spinner fa-3x fa-spin"></i>
+                   </div>
+                <section class="signup">
+                    
+                    <form id="form">
+                        <h1>AGENT SIGNUP</h1>
+                        <div class="input_photo" id="input_photo">
+                            <img id="profileImage">
+                            <input type="file" name="profile" id="profile" accept="image/*" hidden>
+                            <div class="before" id="uploadBTN">
+                                <i class="fas fa-image"></i>
+
+                                <div class="add">
+                                    <p>+</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="input">
+                            <i class="fas fa-user "></i>
+                            <input type="text" name="fullName" placeholder="Full Names" class="name">
+                        </div>
+                        <div class="input ">
+                            <i class="far fa-user "></i>
+                            <input type="text" name="email" placeholder="Email">
+                        </div>
+                        
+                        <div class="input ">
+                            <i class="fas fa-phone "></i>
+                            <input type="tel" name="phone" placeholder=" 097/ 096/ 095 00000 ">
+
+                        </div>
+                        <div class="input">
+                            <i class="fas fa-lock "></i>
+                            <input type="password" name="password" placeholder="Enter Your Screat Password ">
+                        </div>
+                        <button type="submit">SIGNUP</button>
+                    </form>
+                </section>
+            </main>
+            <%- include("./partials/footer.ejs")  %>
+                <script src="/main/index.js"></script>
+                <script src="/main/form.js"></script>
+
+    </body>
+
+</html>

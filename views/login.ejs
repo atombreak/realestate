@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs")  %>
+
+    <body>
+        <%- include("./partials/nav.ejs")  %>
+            <main>
+                <section class="signup">
+                    <form id="form1" autocomplete="off">
+                        <h1>AGENT LOGIN</h1>
+                        <div class="input">
+                            <i class="far fa-phone "></i>
+                            <input type="tel" name="phone" placeholder="097 / 096/ 095 00000" required autocomplete="off">
+                        </div>
+                        <div class="input ">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" placeholder="Enter Your secreat Password" required>
+                        </div>
+                        <button>LOGIN</button>
+                    </form>
+                </section>
+            </main>
+            <%- include("./partials/footer.ejs")  %>
+                <script src="/main/index.js"></script>
+                <script src="/main/form.js"></script>
+    </body>
+
+</html>

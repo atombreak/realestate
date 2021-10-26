@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs")  %>
+
+    <body>
+        <%- include("./partials/nav.ejs")  %>
+            <main>
+                <section class="welcome">
+                    <div class="welcomephoto">
+                        <h2>ZAMBIA’S BIGGEST REAL ESTATE MARKET</h2>
+                    </div>
+                </section>
+                <div class="title">
+                    <h2>RealEstate Best Deals</h2>
+                    <p>Be the first to browse exclusive listings before they hit the market.</p>
+                </div>
+                <section class="categories">
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <p>House</p>
+                    </div>
+                    <div class="category">
+                        <div class="icon">
+
+                            <i class="fas fa-store-alt"></i>
+                        </div>
+                        <p>Apartment</p>
+                    </div>
+
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <p>Boading Houses</p>
+                    </div>
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-cloud-moon-rain"></i>
+                        </div>
+                        <p>FARM</p>
+                    </div>
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <p>PLOTS</p>
+                    </div>
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <p>OFFICE</p>
+                    </div>
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-gopuram"></i>
+                        </div>
+                        <p>FARM HOUSE</p>
+                    </div>
+                    <div class="category">
+                        <div class="icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <p>WAREHOUSE </p>
+                    </div>
+                </section>
+                <section class="properties">
+                    <% if (properties.length > 0) { %>
+                        <% properties.forEach(property => { %>
+                            <a href="/estate/post/<%= property.id %>">
+                                <section class="property">
+                                    <button class="bookmark"><%= property.option %></button>
+                                    <div class="photo">
+                                        <img src="/images/<%= property.photo1 %>">
+                                    </div>
+                                    <div class="description">
+                                        <div class="text">
+                                            <h2>
+                                                <%= property.title %>
+                                            </h2>
+                                            <p>
+                                                <%= property.description %>
+                                            </p>
+                                        </div>
+                                        <div class="contact">
+                                            <h2> <%= property.category %> </h2>
+                                        </div>
+                                        <div class="price">
+                                            <h1>
+                                                ZMW
+                                                <%= property.price %>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </section>
+                            </a>
+                            <% }) %>
+                                <% } %>
+                </section>
+            </main>
+            <%- include("./partials/footer.ejs")  %>
+
+                <script src="/main/index.js"></script>
+    </body>
+
+</html>

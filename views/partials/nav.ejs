@@ -1,0 +1,92 @@
+<header id="header">
+    <div class="logo">
+        <img src="/images/112AAA.png" alt="">
+    </div>
+    <nav>
+        <ul>
+
+            <div class="a">
+                <li>
+                    <a href="/"><i class="fas fa-home"></i></a>
+
+                </li>
+            </div>
+            <div class="a">
+                <li>
+
+                    <a href="/search"><i class="fas fa-search-location"></i></a>
+                </li>
+            </div>
+            <div class="a">
+                <li>
+
+                    <a href="/info"><i class="fas fa-info" id="infoOpen"></i></a>
+                </li>
+            </div>
+            <div class="a">
+                <% if (user) { %>
+                    <li>
+                        <a href="/estate/post">
+                            <i class="far fa-newspaper"></i>
+                        </a>
+                    </li>
+                    <% } else { %>
+                        <li>
+                            <i class="far fa-user"></i>
+                        </li>
+                        <% } %>
+            </div>
+        </ul>
+    </nav>
+</header>
+<div class="userOptins" id="userOptins">
+    <div class="user">
+        <div class="close" id="downUser">
+            <p>&times;</p>
+        </div>
+        <div class="usericon">
+            <i class="fas fa-user"></i>
+        </div>
+        <a href="/auth/sign"><button>SIGNUP <i class="fas fa-pen"></i></button></a>
+        <a href="/auth/login"><button>LOGIN <i class="fas fa-book"></i></button></a>
+    </div>
+</div>
+<nav class="mobile">
+    <ul>
+        <div class="a">
+            <li>
+                <a href="/">
+                    <i class="fas fa-home link" data-links="/"></i>
+                </a>
+            </li>
+        </div>
+        <div class="a">
+            <li>
+                <a href="/search">
+                    <i class="fas fa-search-location link" data-links="/detail"></i>
+                </a>
+            </li>
+        </div>
+        <div class="a">
+            <li>
+                <a href="/info">
+                    <i class="fas fa-info link" data-links="/info"></i>
+                </a>
+            </li>
+        </div>
+        <div class="a">
+            <% if (user) { %>
+                <li>
+                    <a href="/estate/post">
+                        <i class="far fa-newspaper"></i>
+                    </a>
+                </li>
+                <% } else { %>
+                    <li>
+                        <i class="far fa-user"></i>
+                    </li>
+                    <% } %>
+        </div>
+    </ul>
+    <div class="dropdown"></div>
+</nav>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs")  %>
+
+    <body>
+        <%- include("./partials/nav.ejs")  %>
+            <main>
+                <div class="postProperties">
+                    <div class="profile_container">
+                         <div class="notification" id="notification">
+                            <i class="fas fa-spinner fa-3x fa-spin"></i>
+                            
+                         </div>
+                         <div class="error" id="erroNoti">
+                            
+                            <p id="erroNotiOut"></p>
+                            <p id="clo">X</p>
+                            
+                         </div>
+
+                        <form class="creatPost" id="creatPost">
+                            <p>POSTING AN ESTATE IS FREE</p>
+                            <div class="agentInfo">
+                                <input type="text" name="agentfullName" value="<%= user.fullName %>">
+                                <input type="phone" name="agentPhone" value="<%= user.phone %>">
+                                <input type="text" name="agentProfile" value="<%= user.profile %>">
+                                <input type="email" name="agentEmail" value="<%= user.email %>">
+                            </div>
+                            <div class="input">
+                                <input type="text" name="title" placeholder="Title of the Estate" autocomplete="none">
+                            </div>
+                            <div class="input">
+                                <input type="text" name="location" placeholder="Location" autocomplete="off">
+                            </div>
+                            <div class="input">
+                                <input type="text" name="category" placeholder="Apartment, house, office, boading house etc" autocomplete="off">
+                            </div>
+                            
+                            <div class="input">
+                                <input type="text" name="price" placeholder="Price for the Estate" autocomplete="none">
+                            </div>
+                            <div class="text">
+                                <textarea name="description" id="description" placeholder="Desciption of the Estate"></textarea>
+                            </div>
+                           
+                           
+                            
+                            <h1>Estate Image's</h1>
+                            <div class="photos">
+                                <div class="photo" id="photo1">
+                                    <input type="file" name="photo1Input" id="photo1Input" hidden>
+                                    <img src="" id="photo1Image">
+                                    <div class="icon" id="icon1">
+                                        <i class="far fa-image "></i>
+                                        <p>+</p>
+                                    </div>
+                                </div>
+                                <div class="photo" id="photo2">
+                                    <input type="file" name="photo2Input" id="photo2Input" hidden>
+                                    <img src="" id="photo2Image">
+                                    <div class="icon" id="icon2">
+                                        <i class="far fa-image"></i>
+                                        <p>+</p>
+                                    </div>
+                                </div>
+                                <div class="photo" id="photo3">
+                                    <input type="file" name="photo3Input" id="photo3Input" hidden>
+                                    <img src="" id="photo3Image">
+                                    <div class="icon" id="icon3">
+                                        <i class="far fa-image"></i>
+                                        <p>+</p>
+                                    </div>
+                                </div>
+                                <div class="photo" id="photo4">
+                                    <input type="file" name="photo4Input" id="photo4Input" hidden>
+                                    <img src="" id="photo4Image">
+                                    <div class="icon" id="icon4">
+                                        <i class="far fa-image"></i>
+                                        <p>+</p>
+                                    </div>
+                                </div>
+                                <div class="photo" id="photo5">
+                                    <input type="file" name="photo5Input" id="photo5Input" hidden>
+                                    <img src="" id="photo5Image">
+                                    <div class="icon" id="icon5">
+                                        <i class="far fa-image"></i>
+                                        <p>+</p>
+                                    </div>
+                                </div>
+                                <div class="photo" id="photo6">
+                                    <input type="file" name="photo6Input" id="photo6Input" hidden>
+                                    <img src="" id="photo6Image">
+                                    <div class="icon" id="icon6">
+                                          <i class="far fa-image"></i>
+                                        <p>+</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="checkBox-container">
+                                <input type="radio" name="option" id="Sale" value="Sale">
+                                <label for="Sale">Sale</label>
+
+                                <input type="radio" name="option" id="Rent" value="Rent">
+                                <label for="Rent">Rent</label>
+                            </div>
+                            <button id="btn" type="submit" class="post"> Creat the estate  </button>
+
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <%- include("./partials/footer.ejs")  %>
+                <script src="/main/index.js"></script>
+                <script src="/main/postForm.js"></script>
+    </body>
+
+</html>

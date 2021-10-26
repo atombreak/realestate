@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs")  %>
+
+    <body>
+        <%- include("./partials/nav.ejs")  %>
+            <main>
+                <div class="details_page" id="detail">
+
+                    <div class="images">
+                        <div class="mainImage">
+                            <img src="/images/<%= property.photo1 %>" alt="" id="photo">
+                        </div>
+                        <div class="image_list">
+                            <div class="image_iteam">
+                                <img src="/images/<%= property.photo2 %>" alt="" class="image_i">
+                            </div>
+                            <div class="image_iteam">
+                                <img src="/images/<%= property.photo3 %>" alt="" class="image_i">
+                            </div>
+                            <div class="image_iteam">
+                                <img src="/images/<%= property.photo4 %>" alt="" class="image_i">
+                            </div>
+                            <div class="image_iteam">
+                                <img src="/images/<%= property.photo5 %>" alt="" class="image_i">
+                            </div>
+                            <div class="image_iteam">
+                                <img src="/images/<%= property.photo6 %>" alt="" class="image_i">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <h2>Description:
+                        </h2>
+                        <p>
+                            <%= property.description %>
+                        </p>
+                        <h2>Location:</h2>
+                        <p>
+                            <%= property.location %>
+                        </p>
+                    </div>
+                    <div class="price">
+                        <h1>ZMW
+                            <%= property.price %>
+                        </h1>
+                    </div>
+                    <div class="contacts">
+                        <div class="profile">
+                            <img src="/images/<%= property.agentProfile %>">
+                        </div>
+                        <div class="name">
+                            <p>Owner / Agent</p>
+                            <h2>
+                                <%= property.agentfullName %>
+                            </h2>
+                        </div>
+                        <div class="contact">
+                            <a href="tel:+26<%= property.agentPhone %>"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:<%= property.agentEmail %>"><i class="fas fa-envelope-open-text"></i></a>
+                        </div>
+                    </div>
+
+                    <section class="suggestion">
+                        <h1>Suggested Estate</h1>
+
+                        <section class="cards-suggestions">
+                            <% if (properties != "") { %>
+                                <% properties.forEach(property => { %>
+                                   <a href="/estate/post/<%= property.id %>">
+                                    <section class="card-suggestion">
+                                        <div class="unique">
+                                            <p>Rent</p>
+                                        </div>
+                                        <div class="image"><img src="/images/<%= property.photo1 %>" alt="" srcset=""></div>
+                                        <h2>
+                                            <%= property.title %>
+                                        </h2>
+                                        <p>Location:
+                                            <%= property.location %>
+                                        </p>
+                                    </section>
+                                   </a>
+                                    <% }) %>
+                                        <% } %>
+
+
+                        </section>
+
+                    </section>
+                </div>
+
+            </main>
+            <%- include("./partials/footer.ejs")  %>
+                <script src="/main/index.js"></script>
+    </body>
+
+</html>
